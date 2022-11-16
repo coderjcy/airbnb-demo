@@ -1,0 +1,15 @@
+{  
+  "compilerOptions": {     
+      "module": "commonjs",      
+      "allowSyntheticDefaultImports": true,      
+      "baseUrl": "./",      
+      "paths": {  
+        "@/*": ["src/*"],
+        "cpns/*": ["src/components/*"],
+        "utils/*": ["src/utils/*"]  
+      }  
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["src", "craco.config.js", "craco.config.js"]
+
+}
