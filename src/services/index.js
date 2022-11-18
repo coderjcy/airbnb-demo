@@ -9,3 +9,4 @@ const request = new MyRequest({
 
 
 export default request
+export * from './modules/home'

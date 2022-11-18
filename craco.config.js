@@ -7,21 +7,22 @@ module.exports = {
     alias: {
       '@': resolve('src'),
       'cpns': resolve('src/components'),
-      'utils': resolve('src/utils')
+      'utils': resolve('src/utils'),
+      // '@mui/styled-engine': '@mui/styled-engine-sc'
     }
   },
   plugins: [
     {
       plugin: CracoLessPlugin,
       // ant-design中的配置
-      // options: {
-      //   lessLoaderOptions: {
-      //     lessOptions: {
-      //       modifyVars: { '@primary-color': '#1da57a' },
-      //       javascriptEnabled: true
-      //     }
-      //   }
-      // }
+      options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            // modifyVars: { '@primary-color': '#1DA57A' },
+            javascriptEnabled: true
+          }
+        }
+      }
     }
   ]
 }
