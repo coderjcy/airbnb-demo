@@ -10,9 +10,43 @@
         padding: 0;
         margin: 0;
       }
+      #tutorial {
+        border: 1px solid #000;
+        transition: all 3s ease;
+      }
     </style>
   </head>
   <body>
-    <div style="height: 80px; background-color: red"></div>
+    <div>123</div>
+    <canvas id="tutorial" width="150" height="150"></canvas>
+    <div>123</div>
+
+    <script>
+      var canvas = document.getElementById("tutorial");
+      var ctx = canvas.getContext("2d");
+
+      // eg1:
+      // ctx.strokeRect(75, 75, 75, 75);
+      // ctx.fillRect(0, 0, 30, 30);
+      // ctx.clearRect(15, 15, 10, 10);
+
+      // eg2:
+      // ctx.beginPath();
+      // ctx.moveTo(30, 120);
+      // ctx.lineTo(90, 120);
+      // ctx.lineTo(60, Math.sin(Math.PI / 3) * 60);
+      // ctx.fill();
+      // ctx.stroke();
+
+      // eg3:
+      ctx.beginPath();
+      ctx.arc(75, 75, 50, Math.PI, Math.PI * 2); // 绘制
+      ctx.stroke();
+
+      // var source = new EventSource("http://localhost:8080/sse/push"); //为http://localhost:8080/sse/push
+      // source.addEventListener("message", function (e) {});
+      // source.addEventListener("open", function (e) {});
+      // source.addEventListener("error", function (e) {});
+    </script>
   </body>
 </html>

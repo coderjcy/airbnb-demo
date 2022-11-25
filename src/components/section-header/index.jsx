@@ -5,8 +5,8 @@ import HeaderWrapper from './style'
 const SectionHeader = memo((props) => {
   const {title,subtitle} = props
   return (
-    <HeaderWrapper>
-      <div className='content'>
+    <HeaderWrapper style={{height:subtitle?'':'38px'}}>
+      <div className='content' >
         <div className='title'>{title}</div>
         {subtitle && (<div className='subtitle'>{subtitle}</div>)}
         

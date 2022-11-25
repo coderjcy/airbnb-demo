@@ -6,7 +6,6 @@ import Appfooter from './components/app-footer'
 import AppHeader from './components/app-header'
 import routes from './router'
 const App = memo(() => {
-  // test
   return (
     <div className='app'>
       <AppHeader></AppHeader>

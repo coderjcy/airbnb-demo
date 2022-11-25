@@ -4,13 +4,90 @@ const HouseItemWrapper = styled.div`
   padding: 8px;
   padding-bottom: 12px;
   width: 100%;
-  /* margin-left: -8px; */
-  .cover{
-    width: 246px;
-    height: 164px;
+  margin-left: -8px;
+
+
+
+  .slider{
+    position: relative;
+    .control{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+   
+      .left{
+        background: linear-gradient(to right , rgba(0,0,0,0.4),rgba(100,100,100,.1));
+      }
+      .right{
+        background: linear-gradient(to left , rgba(0,0,0,0.45),rgba(100,100,100,.05));
+      }
+      .left,.right{
+        display: none;
+        width: 50px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+      &:hover{
+        .left,.right{
+          display: flex;;
+        }
+      }
+
+
+    }
+    .inidcate-tool{
+      position: absolute;
+      bottom: 6px;
+      width: 30%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      overflow: hidden;
+      font-size: 12px;
+      padding: 5px;
+      box-sizing: content-box;
+      user-select: none;
+      .dot{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+
+        span{
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #fffc;
+        }
+        .active{
+        transform: scale(1.4);
+        background-color: #fff;
+        }
+      }
+  
+    }
   }
+  .cover{
+    width: 100%;
+    padding-top: 66.66666%;
+    position: relative;
 
-
+    .img{
+      position: absolute;
+      top: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
   .info{
     padding-top: 8px;
 
