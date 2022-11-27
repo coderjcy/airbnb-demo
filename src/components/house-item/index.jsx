@@ -18,6 +18,7 @@ const HouseItem = memo((props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onItemClick = () => {
+    if (!houseInfo.picture_urls) return;
     dispatch(changeDetailInfo(houseInfo));
     navigate("/detail");
   };
@@ -40,7 +41,6 @@ const HouseItem = memo((props) => {
       }
     }
   };
-  // console.log("xuan ran + 1");
   const [currentIndex, serCurrentIndex] = useState(0);
 
   return (
@@ -80,15 +80,17 @@ const HouseItem = memo((props) => {
         </div>
       )}
       {!houseInfo.picture_urls && (
-        <div className="cover">
+        <div className="cover" onClick={(e) => onItemClick()}>
           <img className="img" alt="img" src={houseInfo.picture_url} />
         </div>
       )}
       <div className="info">
-        <div className="specification">
+        <div className="specification" onClick={(e) => onItemClick()}>
           {houseInfo.verify_info.messages.join("·")}
         </div>
-        <div className="name">{houseInfo.name}</div>
+        <div className="name" onClick={(e) => onItemClick()}>
+          {houseInfo.name}
+        </div>
         <div className="price">
           <span style={{ color: "#484848" }}>{houseInfo.price_format}</span>/晚
         </div>

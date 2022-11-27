@@ -1,30 +1,46 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const CenterWrapper = styled.div`
-  .search-box{
+  .search-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 300px;
     height: 48px;
     border-radius: 30px;
-    color: ${props => props.theme.text.secondaryColor};
+    color: ${(props) => props.theme.text.secondaryColor};
     font-size: 14px;
     font-weight: 500;
     padding: 0 8px;
     padding-left: 25px;
     cursor: pointer;
     box-shadow: 0 0 3px 1px #ddd;
-    ${props => props.theme.mixin.boxShadow}
-    .icon{
+    ${(props) => props.theme.mixin.boxShadow}
+    .icon {
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background-color: ${props => props.theme.color.primaryColor};
+      background-color: ${(props) => props.theme.color.primaryColor};
       width: 32px;
       height: 32px;
       color: #fff;
     }
   }
-`
+
+  .tabs {
+    color: #222;
+    font-size: 16px;
+    height: 40px;
+
+    span {
+      display: inline-block;
+      margin-right: 20px;
+      line-height: 39px;
+      cursor: pointer;
+    }
+    .isActive {
+      border-bottom: 2px solid;
+    }
+  }
+`;

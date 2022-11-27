@@ -1,16 +1,15 @@
 import React, { memo } from "react";
 import styleStrToObject from "./utils";
-const IconLeftArrow2 = memo((props) => {
+const IconLeftArrow = memo((props) => {
   const size = props.size || 12;
   return (
     <svg
       viewBox="0 0 18 18"
-      role="img"
-      aria-hidden="false"
-      aria-label="previous"
+      role="presentation"
+      aria-hidden="true"
       focusable="false"
       style={styleStrToObject(
-        `height: ${size}px; width: ${size}px; display: block; fill: currentcolor;`
+        `height: ${size}px; width: ${size}px; fill: rgb(255, 255, 255);`
       )}
     >
       <path
@@ -21,4 +20,4 @@ const IconLeftArrow2 = memo((props) => {
   );
 });
 
-export default IconLeftArrow2;
+export default IconLeftArrow;

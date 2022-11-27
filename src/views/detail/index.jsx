@@ -1,5 +1,7 @@
-import React, { memo } from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import PictureBrowser from "@/base-ui/picture-browser";
+import { changeIsFixed } from "@/store/modules/main";
+import React, { memo, useEffect, useState } from "react";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 import DetailWrapper from "./style";
 
@@ -10,6 +12,11 @@ const Detail = memo(() => {
   //   }),
   //   shallowEqual
   // );
+  const dispatche = useDispatch();
+  useEffect(() => {
+    dispatche(changeIsFixed([false, false]));
+  }, []);
+  const [isShow, setIsShow] = useState(false);
   const detailInfo = {
     _id: "63043046432f9033d45410dd",
     id: "44501166",
@@ -71,7 +78,10 @@ const Detail = memo(() => {
     lng: 113.3363,
     image_url: "/moreitems/f6693c3015ce910b71c1e75c98bcd64f.jpg",
   };
-  const onViewPicClick = () => {};
+
+  const onViewPicClick = () => {
+    setIsShow(true);
+  };
   return (
     <DetailWrapper>
       <div className="outer">
@@ -93,6 +103,13 @@ const Detail = memo(() => {
           查看照片
         </button>
       </div>
+      <div style={{ width: "100%", height: "2000px" }}></div>
+      {isShow && (
+        <PictureBrowser
+          pics={detailInfo.picture_urls}
+          setIsShow={setIsShow}
+        ></PictureBrowser>
+      )}
     </DetailWrapper>
   );
 });

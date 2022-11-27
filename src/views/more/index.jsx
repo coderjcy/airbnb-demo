@@ -6,6 +6,7 @@ import Filiter from "./c-cpns/filiter";
 import RoomsArea from "./c-cpns/rooms-area";
 import Pagination from "./c-cpns/pagination";
 import { getRoomListAction } from "@/store/modules/more";
+import { changeIsFixed } from "@/store/modules/main";
 const More = memo(() => {
   const dispatch = useDispatch();
   const { roomList, totalCount, currentPage, isLoading } = useSelector(
@@ -19,6 +20,7 @@ const More = memo(() => {
   );
   useEffect(() => {
     dispatch(getRoomListAction());
+    dispatch(changeIsFixed([true, false]));
   }, []);
 
   return (

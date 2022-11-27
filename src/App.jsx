@@ -1,21 +1,21 @@
-import React, { memo } from 'react'
-import { useRoutes } from 'react-router-dom'
+import React, { memo, useEffect } from "react";
+import { useLocation, useRoutes } from "react-router-dom";
 
-
-import Appfooter from './components/app-footer'
-import AppHeader from './components/app-header'
-import routes from './router'
+import Appfooter from "./components/app-footer";
+import AppHeader from "./components/app-header";
+import routes from "./router";
 const App = memo(() => {
+  // const location = useLocation();
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [location.pathname]);
   return (
-    <div className='app'>
+    <div className="app">
       <AppHeader></AppHeader>
-      <div className="page">
-        {useRoutes(routes)}
-      </div>
+      <div className="page">{useRoutes(routes)}</div>
       <Appfooter></Appfooter>
-
     </div>
-  )
-})
+  );
+});
 
-export default App
+export default App;

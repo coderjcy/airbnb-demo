@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const HouseItemWrapper = styled.div`
   padding: 8px;
@@ -6,11 +6,9 @@ const HouseItemWrapper = styled.div`
   width: 100%;
   margin-left: -8px;
 
-
-
-  .slider{
+  .slider {
     position: relative;
-    .control{
+    .control {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -19,14 +17,23 @@ const HouseItemWrapper = styled.div`
       cursor: pointer;
       display: flex;
       justify-content: space-between;
-   
-      .left{
-        background: linear-gradient(to right , rgba(0,0,0,0.4),rgba(100,100,100,.1));
+
+      .left {
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.4),
+          rgba(100, 100, 100, 0.1)
+        );
       }
-      .right{
-        background: linear-gradient(to left , rgba(0,0,0,0.45),rgba(100,100,100,.05));
+      .right {
+        background: linear-gradient(
+          to left,
+          rgba(0, 0, 0, 0.45),
+          rgba(100, 100, 100, 0.05)
+        );
       }
-      .left,.right{
+      .left,
+      .right {
         display: none;
         width: 50px;
         height: 100%;
@@ -34,15 +41,14 @@ const HouseItemWrapper = styled.div`
         justify-content: center;
         color: #fff;
       }
-      &:hover{
-        .left,.right{
-          display: flex;;
+      &:hover {
+        .left,
+        .right {
+          display: flex;
         }
       }
-
-
     }
-    .inidcate-tool{
+    .inidcate-tool {
       position: absolute;
       bottom: 6px;
       width: 30%;
@@ -54,32 +60,31 @@ const HouseItemWrapper = styled.div`
       padding: 5px;
       box-sizing: content-box;
       user-select: none;
-      .dot{
+      .dot {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 16px;
 
-        span{
+        span {
           width: 6px;
           height: 6px;
           border-radius: 50%;
           background-color: #fffc;
         }
-        .active{
-        transform: scale(1.4);
-        background-color: #fff;
+        .active {
+          transform: scale(1.4);
+          background-color: #fff;
         }
       }
-  
     }
   }
-  .cover{
+  .cover {
     width: 100%;
     padding-top: 66.66666%;
     position: relative;
-
-    .img{
+    cursor: pointer;
+    .img {
       position: absolute;
       top: 0;
       object-fit: cover;
@@ -88,43 +93,45 @@ const HouseItemWrapper = styled.div`
       border-radius: 5px;
     }
   }
-  .info{
+  .info {
     padding-top: 8px;
 
-    .specification{
+    .specification {
       font-size: 12px;
       line-height: 20px;
-      color:${props => props.verifyColor};
+      color: ${(props) => props.verifyColor};
+      cursor: pointer;
     }
 
-    .name{
+    .name {
       font-size: 16px;
       line-height: 22px;
       overflow: hidden;
-      text-overflow: hidden; 
-      display: -webkit-box; 
-      -webkit-line-clamp: 2; 
-      -webkit-box-orient:vertical;
+      text-overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+
+      cursor: pointer;
     }
-    .price{
+    .price {
       height: 20px;
-  
-      color: ${props => props.theme.text.primaryColor};
+
+      color: ${(props) => props.theme.text.primaryColor};
     }
 
-    .span{
+    .span {
       margin-top: 2px;
       display: flex;
       align-items: center;
       height: 22px;
-      columns: ${props => props.theme.text.primaryColor};
+      columns: ${(props) => props.theme.text.primaryColor};
       font-size: 12px;
-      .MuiRating-icon{
+      .MuiRating-icon {
         margin-right: -1.5px;
       }
     }
   }
-`
+`;
 
-
-export default HouseItemWrapper
+export default HouseItemWrapper;

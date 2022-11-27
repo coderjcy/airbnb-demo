@@ -49,6 +49,7 @@ const DetailWrapper = styled.div`
           width: 100%;
           background-color: #000;
           opacity: 0;
+          transition: opacity 200ms ease;
         }
         &:hover {
           .img {
