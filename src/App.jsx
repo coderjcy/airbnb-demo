@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo, Suspense, useEffect } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
 
 import Appfooter from "./components/app-footer";
@@ -12,7 +12,9 @@ const App = memo(() => {
   return (
     <div className="app">
       <AppHeader></AppHeader>
-      <div className="page">{useRoutes(routes)}</div>
+      <Suspense fallback="loading...">
+        <div className="page">{useRoutes(routes)}</div>
+      </Suspense>
       <Appfooter></Appfooter>
     </div>
   );
